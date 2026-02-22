@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="page-wrapper">
+
+    <!-- Page Header -->
+    <div class="page-header">
+    <h2>Products</h2>
+
+    <div th:if="${successMessage}" class="feedback success">
+        <span th:text="${successMessage}"></span>
+    </div>
+
+    <a th:href="@{/products/new}" class="btn-primary btn-small">
+        Add Product
+    </a>
+</div>
+
+    <!-- Products Table -->
+    <div class="table-container" th:if="${products != null and !#lists.isEmpty(products)}">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Department</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr th:each="p : ${products}">
+                    <td th:text="${p.name}"></td>
+                    <td th:text="${p.price}"></td>
+                    <td th:text="${p.quantity}"></td>
+                    <td th:text="${p.department != null ? p.department.name : '-'}"></td>
+
+                    <td>
+                        <a th:href="@{/products/edit/{id}(id=${p.id})}" class="btn btn-edit">
+    Edit
+</a>
+
+<a th:href="@{/products/delete/{id}(id=${p.id})}"
+   class="btn btn-delete"
+   onclick="return confirm('Delete this product?')">
+   Delete
+</a>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div th:if="${#lists.isEmpty(products)}" class="empty-state">
+    <h3>No products yet</h3>
+    <p>Add your first product to get started.</p>
+    <a th:href="@{/products/new}" class="btn-primary">
+        Add Product
+    </a>
+</div>
+
+</div>
+
+<script th:src="@{/js/theme.js}"></script>
+
+</body>
+</html>

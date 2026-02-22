@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login | Inventory Management</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body class="login-page">
+
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="login-title">Inventory Management</h2>
+        <p class="login-subtitle">Sign in to continue</p>
+
+        <form th:action="@{/login}" method="post">
+
+    <div class="form-group">
+        <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+        >
+    </div>
+
+    <div class="form-group password-wrapper">
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+        >
+
+        <!-- 👁 Eye icon MUST be here -->
+        <span class="toggle-password" onclick="togglePassword()">
+            <svg id="eyeIcon" viewBox="0 0 24 24">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </span>
+    </div>
+
+    <!-- ✅ ONE login button -->
+    <button type="submit" class="login-btn">
+        Login
+    </button>
+
+    <div th:if="${param.error}" class="feedback error">
+    Invalid username or password
+</div>
+
+</form>
+
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const input = document.getElementById("password");
+    const eye = document.getElementById("eyeIcon");
+
+    if (input.type === "password") {
+        input.type = "text";
+        eye.innerHTML = `
+            <path d="M3 3l18 18"/>
+            <path d="M10.6 10.6a2 2 0 102.8 2.8"/>
+            <path d="M9.5 5.5C10.3 5.2 11.1 5 12 5c7 0 11 7 11 7a18.6 18.6 0 01-5.1 5.8"/>
+            <path d="M6.1 6.1A18.6 18.6 0 001 12s4 7 11 7c1.5 0 2.9-.3 4.1-.8"/>
+        `;
+    } else {
+        input.type = "password";
+        eye.innerHTML = `
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+            <circle cx="12" cy="12" r="3"/>
+        `;
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Products</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+<script th:src="@{/js/theme.js}"></script>
+<div class="page-wrapper">
+
+    <div class="page-header">
+        <h2>Search Products</h2>
+    </div>
+
+    <div class="form-card">
+		
+		<div th:if="${keyword != null and !#strings.isEmpty(keyword)}" class="table-container">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.quantity}"></td>
+                <td th:text="${product.department.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+        <form th:action="@{/products/search}" method="get">
+
+    <div class="form-group">
+        <input type="text"
+               name="keyword"
+               placeholder="Enter product name"
+               th:value="${keyword}">
+    </div>
+
+    <div class="search-actions">
+        <button type="submit" class="btn btn-primary btn-small">
+            Search
+        </button>
+
+        <a th:href="@{/products/search}" class="btn btn-outline btn-small">
+            Reset
+        </a>
+    </div>
+
+</form>
+
+
+        <div th:if="${#lists.isEmpty(products)}" class="empty-state">
+            No products found.
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
