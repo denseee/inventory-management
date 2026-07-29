@@ -1,13 +1,13 @@
-package com.inventory;
+package com.smartshelf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InventoryManagementApplication {
+public class SmartShelfApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryManagementApplication.class, args);
+		SpringApplication.run(SmartShelfApplication.class, args);
 	}
 
 }

@@ -1,7 +1,8 @@
-package com.inventory.service;
+package com.smartshelf.service;
 
-import com.inventory.entity.Department;
 import java.util.List;
+
+import com.smartshelf.entity.Department;
 
 public interface DepartmentService {
     List<Department> getAll();

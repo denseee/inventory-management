@@ -1,7 +1,8 @@
-package com.inventory.service;
+package com.smartshelf.service;
 
-import com.inventory.entity.Department;
-import com.inventory.repository.DepartmentRepository;
+import com.smartshelf.entity.Department;
+import com.smartshelf.repository.DepartmentRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

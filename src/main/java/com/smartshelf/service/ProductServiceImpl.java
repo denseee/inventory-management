@@ -1,10 +1,10 @@
-package com.inventory.service;
+package com.smartshelf.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.inventory.entity.Product;
-import com.inventory.repository.ProductRepository;
+import com.smartshelf.entity.Product;
+import com.smartshelf.repository.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {

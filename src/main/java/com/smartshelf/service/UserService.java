@@ -1,6 +1,6 @@
-package com.inventory.service;
+package com.smartshelf.service;
 
-import com.inventory.entity.User;
+import com.smartshelf.entity.User;
 
 public interface UserService {
 

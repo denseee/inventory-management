@@ -1,4 +1,4 @@
-package com.inventory.security;
+package com.smartshelf.security;
 
 import java.util.List;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -6,8 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import com.inventory.entity.User;
-import com.inventory.repository.UserRepository;
+
+import com.smartshelf.entity.User;
+import com.smartshelf.repository.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

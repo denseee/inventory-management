@@ -1,7 +1,8 @@
-package com.inventory.repository;
+package com.smartshelf.repository;
 
-import com.inventory.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.smartshelf.entity.Product;
 
 import java.util.List;
 

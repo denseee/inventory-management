@@ -1,7 +1,8 @@
-package com.inventory.service;
+package com.smartshelf.service;
 
-import com.inventory.entity.Product;
 import java.util.List;
+
+import com.smartshelf.entity.Product;
 
 public interface ProductService {
 

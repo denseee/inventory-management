@@ -1,4 +1,4 @@
-package com.inventory.controller;
+package com.smartshelf.controller;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.inventory.entity.Product;
-import com.inventory.service.DepartmentService;
-import com.inventory.service.ProductService;
+import com.smartshelf.entity.Product;
+import com.smartshelf.service.DepartmentService;
+import com.smartshelf.service.ProductService;
 
 @Controller
 @RequestMapping("/products")

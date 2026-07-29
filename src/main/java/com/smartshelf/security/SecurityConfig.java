@@ -1,4 +1,4 @@
-package com.inventory.security;
+package com.smartshelf.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

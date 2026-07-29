@@ -1,7 +1,8 @@
-package com.inventory.service;
+package com.smartshelf.service;
 
-import com.inventory.entity.User;
-import com.inventory.repository.UserRepository;
+import com.smartshelf.entity.User;
+import com.smartshelf.repository.UserRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service

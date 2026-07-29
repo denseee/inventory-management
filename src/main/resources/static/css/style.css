@@ -264,6 +264,18 @@ body.login-page {
     cursor: pointer;
 }
 
+.toggle-password svg {
+    width: 22px;
+    height: 22px;
+    stroke: #6b7280;
+    stroke-width: 2;
+    fill: none;
+    display: block;
+}
+
+.toggle-password:hover svg {
+    stroke: #2563eb;
+}
 
 /* =====================================================
    8. BUTTON SYSTEM
